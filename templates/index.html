@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/estilo.css')}}">
+    <script src="{{url_for('static', filename='js/javascript.js')}}"></script>
+    <title>Formulario de registro</title>
+    <script>
+        //console.log(document);
+        //console.log(window);        
+        /*
+        var cadena = "esto es un string";
+        //alert("esto es una alerta");
+        //console.log( prompt("esto es un prompt"));
+
+        var variable;
+
+        //Condicional if
+        if (variable == undefined){
+            alert("variable no definida");
+        }else{
+            alert("variable definida");
+        }
+
+        //Ciclo for
+        for(cont=0;cont<10;cont++){
+            document.write(cont+" hola<br>");
+        }
+
+        //Ciclo while
+        var i=0;
+        while( i < 3 ){
+            alert('while i:'+ i + '<br>');                
+            i++;
+        }
+
+        //do-while
+        var i=0;
+        do {
+            alert("do-while i: " + i + "<br>");                
+            i++;
+        } while(i<3);
+*/
+
+    </script>
+</head>
+<body>
+    <dev id="devPadding">
+        
+        <h1>
+            <img src="{{url_for('static', filename='img/blue-home-icon.png')}}" alt="" srcset=""> Registro para vacunación COVID-19
+        </h1>
+        <form 
+        method="get" 
+        action=""
+        name="formularioRegistro"
+        onSubmit="validar_formulario();">
+            <div style="width: 100%; display:flex;">
+                <div style="width: 30%">
+                    <label>Nombre:</label>
+                </div>
+                <input style="width: 65%;" type="text" name="nombre" value="{{nombres}}" required><br><br>
+            </div>
+            <br>
+            <div style="width: 100%; display:flex;">
+                <div style="width: 30%">
+                    <label>Apellidos:</label>
+                </div>
+                <input style="width: 65%;" type="text" name="Apellidos" id="apellidos" value="{{apellidos}}"><br><br>
+            </div>
+            <br>
+            
+            <div>
+                <div style="width: 100%; display:flex;">
+                <label style="width:30%;">Sexo:</label>
+                <input type="radio" name="sexo" value="hombre">
+                <label style="width:30%;">Hombre </label>
+                <input type="radio" name="sexo" value="mujer">
+                <label style="width:30%;">Mujer </label>
+                </div>
+            </div>
+            <br>
+
+            <div style="width: 100%; display:flex;">
+                <div style="width: 30%">
+                    <label>Correo:</label>
+                </div>
+                <input style="width: 65%;" type="text" name="correo"><br><br>
+            </div>
+            <br>
+
+            <div style="width: 100%; display:flex;">
+                <div style="width: 30%">
+                    <label>Contraseña:</label>
+                </div>
+                <input style="width: 65%;" type="password" name="contrasena"><br><br>
+            </div>
+            <br>
+
+            <input type="checkbox" name="Declaracion">
+            <label><small>Declaro haber leido y acepto las condiciones generales 
+                del programa y la normativa sobre protección de datos.</small> 
+            </label><br><br>
+            
+            <div id="enviar">
+            <button type="button" class="btn btn-secondary" onclick="validar_formulario();">Enviar</button>
+            <!--<input style="font-weight: 700;"type="submit" value="Enviar">-->
+            </div>
+        </form>
+        
+    </dev>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
